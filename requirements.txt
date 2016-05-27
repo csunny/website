@@ -1,0 +1,8 @@
+redis==2.10.5
+django-redis==4.4.2
+APScheduler==3.1.0
+
+# xadmin lib packages
+django==1.8,2
+xlwt ==0.7.5
+git+https://github.com/sshwsfc/django-xadmin.git@django1.9
