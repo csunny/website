@@ -1,0 +1,14 @@
+#redis caching
+redis==2.10.5
+django-redis==4.4.2
+APScheduler==3.1.0
+
+# xadmin lib packages
+django-reversion==1.8.5
+xlwt==0.7.5
+git+https://github.com/sshwsfc/django-xadmin.git@django1.9
+django>=1.9.0
+django-crispy-forms
+django-reversion
+django-formtools==1.0
+httplib2==0.9.2

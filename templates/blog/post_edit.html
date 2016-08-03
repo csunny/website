@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block content%}
+    <h1>添加文章</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea'
+        });
+    </script>
+    <button type="submit" class="save btn btn-default">保存</button>
+    </form>
+{% endblock %}
+
+
+
+<!-- add edit
+{#{% block content %}#}
+{#    <h1>添加文章</h1>#}
+{#    <form method="POST" class="post-form">{% csrf_token %}#}
+{#    {{form.as_p  }}#}
+{#    <button type="submit" class="save btn btn-default">保存</button>#}
+{#    </form>#}
+{#{% endblock %}#}

@@ -1,0 +1,10 @@
+Failed to read config file: /mnt/magicshare/website/gunicorn.conf.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 93, in get_config_from_filename
+    execfile_(filename, cfg, cfg)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/_compat.py", line 91, in execfile_
+    return execfile(fname, *args)
+  File "/mnt/magicshare/website/gunicorn.conf.py", line 8
+    proc_name = 'gunicorn_website
+                                ^
+SyntaxError: EOL while scanning string literal
