@@ -12,10 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-<<<<<<< HEAD
-=======
 # import xadmin
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -29,30 +27,21 @@ SECRET_KEY = 'v9zg7_-mwicz=471#*bs(kf&e@=)-#0g&!e%=fkgs&z9c)0*0y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-<<<<<<< HEAD
 ALLOWED_HOSTS = ['localhost', 'example.com']
-=======
-ALLOWED_HOSTS = []
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
+
 
 ################
 #  xadmin conf #
 #              #
 #    *****     #
 ################
-<<<<<<< HEAD
+
 ADMINS = (
     # (name ,email name)
     ('magic', 'magic.chen@fuwo.com'),
 )
 MANAGERS = ADMINS
-=======
-# ADMINS=(
-#     #(name ,email name)
-#     ('magic','magic.chen@fuwo.com'),
-# )
-# MANAGERS = ADMINS
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
+
 
 # Application definition
 INSTALLED_APPS = (
@@ -66,11 +55,6 @@ INSTALLED_APPS = (
     # 'xadmin',
     # 'crispy_forms',
     # 'reversion',
-<<<<<<< HEAD
-    # 'debug_toolbar',
-=======
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
-)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -81,10 +65,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-<<<<<<< HEAD
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
-=======
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
+
 )
 
 ROOT_URLCONF = 'website.urls'
@@ -123,15 +105,11 @@ DATABASES = {
     }
 }
 
-<<<<<<< HEAD
 # CELERY SETTINGS
 BROKER_URL = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-
-=======
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -146,11 +124,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-<<<<<<< HEAD
 # INTERNAL_IPS = ('127.0.0.1',)
-=======
 
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -163,12 +139,8 @@ STATICFILES_DIRS = (
 )
 
 
-##########################
-<<<<<<< HEAD
-# There is something error#
-=======
+
 #There is something error#
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
 #     **need check**     #
 ##########################
 

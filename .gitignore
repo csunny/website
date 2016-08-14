@@ -4,4 +4,11 @@ __pycache__
 local_settings.py
 db.sqlite3
 migrations
+nohup.out
+nginx.error.log
+nginx.conf
+nginx.access.log
+guncorn.conf.py
+nginx.conf
+website-celery.conf
 

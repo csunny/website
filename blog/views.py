@@ -1,35 +1,20 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from blog.models import *
 from blog.forms import PostForm
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-=======
 from django.shortcuts import render,redirect
 from blog.models import *
 from blog.forms import PostForm
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
 from django.contrib.auth.decorators import login_required
 from website.settings import *
 
 # Create your views here.
 # article list
-<<<<<<< HEAD
 
 
-def post_list(request):
-	posts = Post.objects.all().order_by('-created_date')
-	# posts = Post.objects.filter(published_date__isnull=False).order_by('-published_date')
-	#postsall = Post.objects.annotate(num_comment=Count('comment')).filter(published_date_isnull=False).prefetch_related('category').prefetch_related('tags').order_by('-published_date')
-	# for p in posts:
-	# 	p.click = cache_manager.get_click(p)
-	paginator = Paginator(posts, 3)      # show 3 contents per page
-	page = request.GET.get('page')
-	try:
-		posts = paginator.page(page)
-=======
 def post_list(request):
 	posts = Post.objects.all().order_by('-created_date')
 	# posts = Post.objects.filter(published_date__isnull=False).order_by('-published_date')
@@ -40,7 +25,6 @@ def post_list(request):
 	page = request.GET.get('page')
 	try:
 		posts=paginator.page(page)
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
 	except PageNotAnInteger:
 		# if page is not an integer,deliver first page
 		posts = paginator.page(1)
@@ -48,7 +32,6 @@ def post_list(request):
 		# if page is out of range(e.g. 9999),deliver last page of results
 
 		posts = paginator.page(paginator.num_pages)
-<<<<<<< HEAD
 	return render(request, 'blog/post_list.html', locals())
 
 # article detail
@@ -80,7 +63,6 @@ def post_new(request):
 @login_required
 def post_edit(request, pk):
     post = Post.objects.get(id = pk)
-=======
 	return render(request, 'blog/post_list.html',locals())
 
 # article detail
@@ -105,7 +87,6 @@ def post_new(request):
 @login_required
 def post_edit(request, pk):
     post = Post.objects.get(id=pk)
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -117,23 +98,19 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-<<<<<<< HEAD
 
 # wait publish
 def post_draft_list(request):
 	posts = Post.objects.filter(published_date__isnull=True). order_by('-created_date')
 	return render(request, 'blog/post_draft_list.html', locals())
-=======
 # wait publish
 def post_draft_list(request):
 	posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
 	return render(request,'blog/post_draft_list.html',locals())
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
 
 
 # article publish function
 @login_required
-<<<<<<< HEAD
 def post_publish(request, pk):
 	post = Post.objects.get(id=pk)
 	post.publish()
@@ -146,7 +123,6 @@ def post_remove(request, pk):
 	return redirect('blog.views.post_list')
 
 # paginate function
-=======
 def post_publish(request,pk):
 	post = Post.objects.get(id=pk)
 	post.publish()
@@ -158,6 +134,5 @@ def post_remove(request,pk):
 	return redirect('blog.views.post_list')
 
 #paginate function
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
 
 
