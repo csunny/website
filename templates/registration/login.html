@@ -1,25 +1,35 @@
-{% extends "blog/base.html" %}
-
-{% block content %}
-
-    {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-    {% endif %}
-
+{% load staticfiles %}
+{% load i18n %}
+<html>
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="NONE,NOARCHIVE">
+    <title>用户登录 - SimpleBlog</title>
+    <!--...中间省略...-->
+    <script type="text/javascript" src="{% static 'xadmin/vendor/jquery/jquery.js' %}"></script>
+</head>
+<body class="login">
+<div class="container">
     <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
-    {% csrf_token %}
-    <table>
-    <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-    </tr>
-    <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-    </tr>
-    </table>
-
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
+        {% csrf_token %}
+        <div class="panel panel-default panel-single" id="panel-login">
+            <div class="panel-heading">
+                <h2 class="form-signin-heading">请登录</h2>
+            </div>
+            <!--...中间省略...-->
+        </div>
     </form>
-{% endblock %}
+
+</div>
+<!--...中间省略...-->
+<script type="text/javascript" src="{% static 'xadmin/js/xadmin.main.js' %}"></script>
+<script type="text/javascript" src="{% static 'xadmin/js/xadmin.responsive.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'xadmin/vendor/jquery-ui/jquery.ui.effect.js' %}"></script>
+<script type="text/javascript" src="{% static 'xadmin/js/xadmin.plugin.themes.js' %}"></script>
+
+</body>
+</html>
