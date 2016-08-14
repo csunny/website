@@ -13,34 +13,23 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-
-<<<<<<< HEAD
-from django.conf.urls import include, url, patterns
-from django.contrib import admin
-from website.settings import *
 # xadmin
 # from xadmin.plugins import xversion
 # xversion.register_models()
 #
-=======
+
 from django.conf.urls import include, url,patterns
 from django.contrib import admin
 from website.settings import *
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
 from blog.views import *
 admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-<<<<<<< HEAD
     url(r'', include('blog.urls')),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
-=======
-    url(r'',include('blog.urls')),
-    url(r'^accounts/login/$','django.contrib.auth.views.login'),
-    url(r'^accounts/logout/$','django.contrib.auth.views.logout',{'next_page':'/'}),
->>>>>>> 90f339b206b0e46222c2a3534b2e2a9b82322222
+
     # url(r'^xadmin/',include(xadmin.site.urls),name="xadmin"),
 
 ]
