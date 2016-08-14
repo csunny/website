@@ -27,7 +27,7 @@ SECRET_KEY = 'v9zg7_-mwicz=471#*bs(kf&e@=)-#0g&!e%=fkgs&z9c)0*0y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'example.com']
+ALLOWED_HOSTS = ['*']
 
 
 ################
@@ -51,8 +51,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'mongoengine.django.mongo_auth',
     'mongoengine',
+    'mongonaut',
+    'blog',
     # 'xadmin',
     # 'crispy_forms',
     # 'reversion',
@@ -106,17 +108,25 @@ MONGODB_DATABASES = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.dummy',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
 from mongoengine import connect
-connect('webdb', host='127.0.0.1', )
+connect('webdb', host='127.0.0.1')
+
+AUTHENTICATION_BACKENDS = (
+    ('django.contrib.auth.backends.ModelBackend'),
+    ('mongoengine.django.auth.MongoEngineBackend'),
+)
+SESSION_ENGINE = 'mongoengine.django.sessions'
+AUTH_USER_MODE = 'mongo_auth.MongoUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Shanghai'
 
@@ -139,7 +149,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
      os.path.join(BASE_DIR, 'static'),
 )
-
 
 
 #There is something error#

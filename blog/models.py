@@ -5,9 +5,10 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from mongoengine import *
 
+
 class Post(Document):
     meta = {
-        'collection': 'poem_data'
+        'collection': 'post_data'
     }
     poem_id = SequenceField(required=True, primary_key=True)
     author = StringField()

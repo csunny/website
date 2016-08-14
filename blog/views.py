@@ -3,7 +3,7 @@ from blog.models import *
 # from blog.forms import PostForm
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from website.settings import *
 
 # Create your views here.
@@ -70,7 +70,7 @@ def post_draft_list(request):
 	return render(request, 'blog/post_draft_list.html', locals())
 
 # article publish function
-@login_required
+# @login_required
 def post_publish(request, pk):
 	post = Post.objects.get(id=pk)
 	post.publish()

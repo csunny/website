@@ -14,29 +14,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 
-
-from django.conf.urls import include, url, patterns
-from django.contrib import admin
-from website.settings import *
 # xadmin
 # from xadmin.plugins import xversion
 # xversion.register_models()
-#
 
 from django.conf.urls import include, url,patterns
 from django.contrib import admin
 from website.settings import *
 from blog.views import *
+import mongonaut
 admin.autodiscover()
 
 urlpatterns = [
+    url(r'^mongonaut/', include('mongonaut.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('blog.urls')),
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
-    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+    # url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    # url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     url(r'',include('blog.urls')),
-    url(r'^accounts/login/$','django.contrib.auth.views.login'),
-    url(r'^accounts/logout/$','django.contrib.auth.views.logout',{'next_page':'/'}),
+    # url(r'^accounts/login/$','django.contrib.auth.views.login'),
+    # url(r'^accounts/logout/$','django.contrib.auth.views.logout',{'next_page':'/'}),
     # url(r'^xadmin/',include(xadmin.site.urls),name="xadmin"),
 
 ]
