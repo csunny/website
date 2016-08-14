@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v9zg7_-mwicz=471#*bs(kf&e@=)-#0g&!e%=fkgs&z9c)0*0y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'example.com']
 
@@ -55,7 +55,7 @@ INSTALLED_APPS = (
     # 'xadmin',
     # 'crispy_forms',
     # 'reversion',
-
+)
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -98,18 +98,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webdb',
-	'USER': '',
-	'PASSWORD': '',
-	'HOST':'',
-	'PORT':'',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST':'',
+        'PORT':'',
     }
 }
-
-# CELERY SETTINGS
-BROKER_URL = 'redis://localhost:6379/0'
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
