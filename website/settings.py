@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'mongoengine',
     # 'xadmin',
     # 'crispy_forms',
     # 'reversion',
@@ -93,17 +94,24 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+# mongodb config
+MONGODB_DATABASES = {
+    'default':{
+        'name':'webdb',
+        'host':'127.0.0.1',
+        'tz_aware':True,
+    }
+}
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'webdb',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST':'',
-        'PORT':'',
+        'ENGINE': 'django.db.backends.dummy',
     }
 }
+
+from mongoengine import connect
+connect('webdb', host='127.0.0.1', )
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
